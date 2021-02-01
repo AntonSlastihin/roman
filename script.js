@@ -43,7 +43,11 @@ form.onsubmit = function (e){
 
     if (reg.test(input.value)){
         result.innerHTML = RomanNumerals.fromRoman(input.value);
-    } else if (/[0-9]+/.test(input.value) && input.value < 4000) {
-        result.innerHTML = RomanNumerals.toRoman(input.value * 1);
+    } else if (/[0-9]+/.test(input.value)) {
+        if (input.value < 4000){
+            result.innerHTML = RomanNumerals.toRoman(input.value * 1);
+        } else {
+            alert("интервал от 0 до 3999")
+        }
     }
 }
