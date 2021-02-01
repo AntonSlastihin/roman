@@ -43,7 +43,7 @@ form.onsubmit = function (e){
 
     if (reg.test(input.value)){
         result.innerHTML = RomanNumerals.fromRoman(input.value);
-    } else if (/[0-9]+/.test(input.value)) {
+    } else if (/[0-9]+/.test(input.value) && input.value < 4000) {
         result.innerHTML = RomanNumerals.toRoman(input.value * 1);
     }
 }
