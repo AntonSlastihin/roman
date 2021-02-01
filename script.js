@@ -37,7 +37,7 @@ const RomanNumerals = {
 const form  = document.querySelector('.form');
 const input = form.querySelector('input');
 const result = form.querySelector('.rom_number');
-const reg = new RegExp(Object.keys(romanNums).join('|'), 'g');
+const reg = new RegExp(Object.keys(romanNums).join('|'), 'gi');
 form.onsubmit = function (e){
     e.preventDefault();
 
