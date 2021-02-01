@@ -40,14 +40,14 @@ const result = form.querySelector('.rom_number');
 const reg = new RegExp(Object.keys(romanNums).join('|'), 'gi');
 form.onsubmit = function (e){
     e.preventDefault();
-    
-    if (reg.test(input.value.toUpperCase())){
-        result.innerHTML = RomanNumerals.fromRoman(input.value);
+
+    if (reg.test(input.value)){
+        result.innerHTML = RomanNumerals.fromRoman(input.value.toUpperCase().trim());
     } else if (/[0-9]+/.test(input.value)) {
-        if (input.value < 4000){
+        if (input.value * 1 < 4000){
             result.innerHTML = RomanNumerals.toRoman(input.value * 1);
         } else {
-            alert("интервал от 0 до 3999")
+            alert('ИНТЕРВАЛ ОТ 0 до 3999');
         }
     }
 }
