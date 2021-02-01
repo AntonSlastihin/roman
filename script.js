@@ -40,8 +40,8 @@ const result = form.querySelector('.rom_number');
 const reg = new RegExp(Object.keys(romanNums).join('|'), 'gi');
 form.onsubmit = function (e){
     e.preventDefault();
-
-    if (reg.test(input.value)){
+    
+    if (reg.test(input.value.toUpperCase())){
         result.innerHTML = RomanNumerals.fromRoman(input.value);
     } else if (/[0-9]+/.test(input.value)) {
         if (input.value < 4000){
